@@ -1,0 +1,114 @@
+﻿@using BookingValais.ViewModels
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/HomePage.css">
+</head>
+@model BookingValais.ViewModels.HomeVM
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Search :</h2>
+
+@using (Html.BeginForm("GetHotels", "Home", FormMethod.Post))
+{
+    // used to set minimum dates in datetimepicker
+    DateTime today = DateTime.Now;
+    DateTime tomorrow = today.AddDays(1);
+    DateTime aftertomorrow = tomorrow.AddDays(1);
+
+    @Html.AntiForgeryToken()
+    <div id="simpleSearch">
+        <table>
+            <tr>
+                <th>
+                    Check-In :
+                </th>
+                <th>
+                    <input type="date" name="txtDateStart" min="@tomorrow" class="defaultWidth">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Check-Out :
+                </th>
+                <th>
+                    <input type="date" name="txtDateEnd" min="@aftertomorrow" class="defaultWidth">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Location :
+                </th>
+                <th>
+                    @Html.TextBox("txtLocation")
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    How many persons ?
+                </th>
+                <th>
+                    @Html.DropDownList("HotelPersons",
+                                         new SelectList(Enum.GetValues(typeof(Persons))),
+                                         "Select number of persons",
+                                         new { @class = "form-control" })
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    //collapsable div that show advanced search options
+    <div id="advancedSearch" class="collapse">
+        <table>
+            <tr>
+                <th>
+                    @Html.CheckBox("checkParking")
+                    With parking ?
+                </th>
+                <th>
+                    @Html.CheckBox("checkWifi")
+                    With Wifi ?
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.CheckBox("checkHairDryer")
+                    With hair dryer ?
+                </th>
+                <th>
+                    @Html.CheckBox("checkTV")
+                    With tv ?
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    How many Stars ?
+                </th>
+                <th>
+                    @Html.DropDownList("HotelStars",
+                                                    new SelectList(Enum.GetValues(typeof(Stars))),
+                                                    "Select number of Stars",
+                                                    new { @class = "form-control" })
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    //search button
+    <input type="submit" value="Search !" class="buttonStyle"/>
+
+
+
+}
+
+<button data-toggle="collapse" data-target="#advancedSearch" class="buttonStyle">Advanced Search</button>
+
+@if (Convert.ToString(ViewData["Error"]) != "")
+{
+    <p style="color:red">@ViewData["Error"]</p>
+}
+
+
+

@@ -1,0 +1,8 @@
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\bin\Release\DAL.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\bin\Release\DAL.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\bin\Release\DTO.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\bin\Release\DTO.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\obj\Release\DAL.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\DAL\obj\Release\DAL.pdb

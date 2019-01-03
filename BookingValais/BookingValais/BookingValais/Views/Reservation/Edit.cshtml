@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Delete", "Reservation", FormMethod.Post))
+{
+    int counter = 0;
+
+    //shows the reservations of the current user, based on Session variable
+
+    foreach (var item in ViewData["listReservations"] as IEnumerable<DTO.Reservation>)
+    {
+        counter++;
+        DateTime dateStart = item.DateStart;
+        DateTime dateEnd = item.DateEnd;
+
+        string dateStartText = dateStart.Year + "-" + dateStart.Month + "-" + dateStart.Day;
+        string dateEndText = dateEnd.Year + "-" + dateEnd.Month + "-" + dateEnd.Day;
+
+        <p>
+            @item.IdReservation | @item.hotelName | @dateStartText | @dateEndText | @item.TotalPrice
+        <input type="checkbox" value="@item.IdReservation" name="selectedReservation" />
+        </p>
+    }
+
+    //only show the button to delete if there are reservations to be deleted
+    if (counter == 0)
+    {
+        <p>You have no reservations.</p>
+    }
+    else
+    {
+        <input type="submit" value="Delete the selected reservations" onclick="return confirm('Are you sure?')" />
+    }
+
+}
+

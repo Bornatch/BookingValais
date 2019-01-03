@@ -1,0 +1,171 @@
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\obj\Debug\BookingValais.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\ApplicationInsights.config
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\BookingValais.dll.config
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\BookingValais.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\BookingValais.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Antlr3.Runtime.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\BLL.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\DTO.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.Web.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Newtonsoft.Json.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Helpers.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Mvc.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Optimization.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Razor.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.WebPages.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.WebPages.Razor.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\WebGrease.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\DAL.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\BLL.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\DTO.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Helpers.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Mvc.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Optimization.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.Razor.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.WebPages.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\System.Web.WebPages.Razor.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Antlr3.Runtime.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Newtonsoft.Json.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\Microsoft.AI.Web.xml
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\DAL.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\fr\System.Web.Razor.resources.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\obj\Debug\BookingValais.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\obj\Debug\BookingValais.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\BookingValais\obj\Debug\BookingValais.pdb
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\ApplicationInsights.config
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\BookingValais.dll.config
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\BookingValais.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\BookingValais.pdb
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Antlr3.Runtime.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\BLL.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\DTO.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.Web.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.ApplicationInsights.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Newtonsoft.Json.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Helpers.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Mvc.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Optimization.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Razor.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Deployment.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Razor.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\WebGrease.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\DAL.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\BLL.pdb
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\DTO.pdb
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Helpers.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Mvc.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Optimization.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.Razor.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Deployment.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Razor.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Antlr3.Runtime.pdb
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Newtonsoft.Json.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.ApplicationInsights.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.Web.xml
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\DAL.pdb
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Razor.resources.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.csprojResolveAssemblyReference.cache
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.csproj.CoreCompileInputs.cache
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.dll
+C:\Users\uadmin.DESKTOP-2C1DQEP\Desktop\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\ApplicationInsights.config
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\BookingValais.dll.config
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\BookingValais.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\BookingValais.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Antlr3.Runtime.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\BLL.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\DTO.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.Web.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Newtonsoft.Json.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Helpers.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Mvc.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Optimization.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Razor.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Razor.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\WebGrease.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\DAL.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\BLL.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\DTO.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Helpers.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Mvc.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Optimization.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.Razor.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Razor.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Antlr3.Runtime.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Newtonsoft.Json.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.Web.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\DAL.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Helpers.resources.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Mvc.resources.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Optimization.resources.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Razor.resources.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.WebPages.resources.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.WebPages.Razor.resources.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.csprojAssemblyReference.cache
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.csproj.CoreCompileInputs.cache
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.csproj.CopyComplete
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\obj\Debug\BookingValais.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\Newtonsoft.Json.pdb
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\EntityFramework.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\EntityFramework.SqlServer.dll
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\EntityFramework.xml
+C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BookingValais\bin\EntityFramework.SqlServer.xml

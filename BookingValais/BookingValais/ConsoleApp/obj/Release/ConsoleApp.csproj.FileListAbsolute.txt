@@ -1,0 +1,13 @@
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\ConsoleApp.exe.config
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\ConsoleApp.exe
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\ConsoleApp.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\BLL.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\DTO.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\DAL.dll
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\BLL.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\DTO.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\bin\Release\DAL.pdb
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\obj\Release\ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\obj\Release\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\obj\Release\ConsoleApp.exe
+C:\Users\Nicolas Solioz\Documents\Code\Visual Studio\BookingValais\ConsoleApp\obj\Release\ConsoleApp.pdb

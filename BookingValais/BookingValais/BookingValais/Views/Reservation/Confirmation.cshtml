@@ -1,0 +1,38 @@
+﻿@using DTO;
+
+@{
+    ViewBag.Title = "Confirmation";
+    List<Room> listOfRoomsToBook = (List<Room>)ViewData["listRoomsToBook"];
+
+}
+
+<h2>Order confirmation</h2>
+
+@using (Html.BeginForm("FinalizeReservation", "Reservation", FormMethod.Post))
+{
+    <p>List of rooms : </p>
+    <ul>
+        <!-- go through ViewData to show the rooms the user wants to reserve-->
+        @foreach (var item in ViewData["listRoomsToBook"] as IEnumerable<Room>)
+        {
+        string description = item.Description;
+        description = description.Replace("<p>", "");
+        description = description.Replace("</p>", "");
+
+        <li>
+            @description- Room for @item.Type  person(s)
+            <input type="number" class="hidden" value=@item.IdRoom name="selectedRooms" />
+        </li>
+        
+        }
+    </ul>
+
+    <p>Check in : @ViewData["dateStart"]</p>
+    <input type="text" class="hidden" value=@ViewData["dateStart"] name="dateStart" />
+    <p>Check out : @ViewData["dateEnd"]</p>
+    <input type="text" class="hidden" value=@ViewData["dateEnd"] name="dateEnd" />
+    <p>Total price : @ViewData["totalPrice"]</p>
+    <input type="text" class="hidden" value=@ViewData["totalPrice"] name="totalPrice" />
+
+    <input type="submit" value="Confirm the reservation." />
+}

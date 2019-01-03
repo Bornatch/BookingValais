@@ -1,0 +1,166 @@
+﻿@using BookingValais.ViewModels
+@model BookingValais.ViewModels.RoomVM
+
+@{
+    ViewBag.Title = "Room";
+    DTO.Hotel hotel = (DTO.Hotel)ViewData["Hotel"];
+}
+
+<body>
+    <p>
+        <h2>@hotel.Name</h2>
+    </p>
+    <p>
+        @{ 
+            <!-- print stars-->
+            for(int i = 0; i<hotel.Category; i++)
+            {
+                <img src="~/Content/Images/star.png" alt="Stars" style="height:20px; width:20px;">
+            }
+        }
+    </p>
+    <p>
+        @{ 
+            <!-- show icon of the hotels characteristics-->
+            if(hotel.HasParking == true)
+            {
+                <img src="~/Content/Images/parking.png" alt="Parking" style="height:20px; width:20px;">
+            }
+
+            if(hotel.HasWifi == true)
+            {
+                <img src="~/Content/Images/wifi.png" alt="Wifi" style="height:20px; width:20px;">
+            }
+        }
+    </p>
+        @hotel.Description.Replace("<p>", "").Replace("</p>", "")
+    <p>
+
+    </p>
+    <p style="color:red">
+        <!-- the prices of the rooms are calculated based on the number of nights-->
+        The prices shown are for the total number of nights !
+    </p>
+
+    <div class="w3-content w3-display-container">
+        <!-- generate image gallery -->
+        @foreach (var item in ViewData["Pictures"] as List<string>)
+        {
+            <div class="w3-display-container mySlides">
+                <img src="@item" style="width:400px;height:300px">
+            </div>
+        }
+
+        <!-- image gallery navigation buttons-->
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    @using (Html.BeginForm("ReserveRoom", "Reservation", FormMethod.Post))
+    {
+        string dateStart = Convert.ToDateTime(ViewData["dateStart"]).ToString("yyyy-MM-dd");
+        string dateEnd = Convert.ToDateTime(ViewData["dateEnd"]).ToString("yyyy-MM-dd");
+
+        int numberRooms = 0;
+
+        //count number of rooms 
+        foreach (var item in ViewData["ListRooms"] as IEnumerable<DTO.Room>)
+        {
+            numberRooms = numberRooms + 1;
+        }
+        Boolean[] checkBoxes = new Boolean[numberRooms];
+
+        <p>
+            There are @numberRooms  rooms available between @Html.Label(dateStart) and @Html.Label(dateEnd)
+            <input type="number" class="hidden" value=@numberRooms name="numberRooms" />
+            <input type="text" class="hidden" value=@dateStart name="dateStart" />
+            <input type="text" class="hidden" value=@dateEnd name="dateEnd" />
+        </p>
+
+        <div id="ListRooms">
+            <!-- loop through viewdata and show the room information-->
+            @foreach (var item in ViewData["ListRooms"] as IEnumerable<DTO.Room>)
+            {
+            <table>
+                <tr>
+                    <td>
+                        @if (item.Type == 1)
+                        {
+                        <img src="~/Content/Images/single bed.png" alt="Single Room" style="height:20px; width:20px;">
+                        }
+                        else
+                        {
+                        <img src="~/Content/Images/double bed.png" alt="Double Room" style="height:20px; width:20px;">
+                        }
+
+                        @if (item.HasHairDryer == true)
+                        {
+                            <img src="~/Content/Images/hair dryer.png" alt="Hair Dryer" style="height:20px; width:20px;">
+                        }
+
+                        @if (item.HasTV == true)
+                        {
+                            <img src="~/Content/Images/tv.png" alt="TV" style="height:20px; width:20px;">
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @item.Price
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @{ 
+                            string description = item.Description;
+                            description = description.Replace("<p>", "");
+                            description = description.Replace("</p>", "\n");
+                            item.Description = description;
+                            @item.Description
+                        }
+                    </td>
+                </tr>
+
+                @{
+                    //value of IdRoom left of slash, value of price right of slash
+                    string value = item.IdRoom + "/" + item.Price;
+                }
+
+                <tr>
+                    <td>
+                        <input type="checkbox" value=@value name="selectedRoom" />
+                        Select this room 
+                    </td>
+                </tr>
+            </table>
+            <br>
+             }
+
+        </div>
+
+        <input type="submit" value="Book room(s) now !" />
+    }
+
+    <!-- script used to navigate image gallery, source w3-->
+    <script type="text/javascript">
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+
+

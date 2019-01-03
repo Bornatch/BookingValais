@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Hotel";
+}
+
+<h2>Available Hotels</h2>
+
+@{
+    //retrieve list of pictures stored in ViewData
+    List<string> pictures = (List<string>)ViewData["Pictures"];
+    int counter = 0;
+}
+
+<!-- go through ViewData["ListHotels"] and show the necessary information-->
+@foreach (var item in ViewData["ListHotels"] as IEnumerable<DTO.Hotel>)
+{
+    <p>
+    <h1>@item.Name</h1>
+
+    <!-- counts the amount of stars and inserts an image-->
+    @for(int i = 0; i<item.Category; i++)
+    {
+      <img src="~/Content/Images/star.png" alt="Stars" style="height:20px; width:20px;">
+    }
+    </p>
+
+    <p>
+        <img src="@pictures[counter]" alt="Hotel" style="height:100px; width:100px;">
+    </p>
+
+    //counter is used to get the correct image
+    counter++;
+
+    //modify the description in order to cut out the p tags
+    string description = item.Description;
+    description = description.Replace("<p>", "");
+    description = description.Replace("</p>", "\n");
+
+    item.Description = description;
+    
+    <p>
+        @item.Description
+    </p>
+    
+    <p>
+        <input type="button" value="More information ..." onclick="location.href='@Url.Action("Index", "Room", new RouteValueDictionary(new { idHotel = item.IdHotel, dateStart = ViewData["DateStart"], dateEnd = ViewData["DateEnd"]}))'" />
+    </p>
+
+    
+}
+
+
+
+

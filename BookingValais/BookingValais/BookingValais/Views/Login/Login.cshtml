@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/HomePage.css">
+</head>
+
+<h2>Login</h2>
+
+<p style="color:red">
+    @ViewData["Error"]
+</p>
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>
+            Surname : 
+        </td>
+        <td>
+            @Html.TextBox("surname")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Name : 
+        </td>
+        <td>
+            @Html.TextBox("name")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Password :
+        </td>
+        <td>
+            <input name="password" type="password">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Login" /> 
+        </td>
+    </tr>
+</table>
+     
+}
+
