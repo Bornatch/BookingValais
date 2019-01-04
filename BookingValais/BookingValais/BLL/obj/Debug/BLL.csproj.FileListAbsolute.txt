@@ -32,3 +32,16 @@ C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BLL\obj\Debug\BLL.pdb
 C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BLL\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BLL\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Bornatch\source\repos\BookingValais\BookingValais\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\BLL.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\BLL.pdb
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\DAL.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\DTO.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\DAL.pdb
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\DTO.pdb
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\obj\Debug\BLL.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BLL\obj\Debug\BLL.pdb

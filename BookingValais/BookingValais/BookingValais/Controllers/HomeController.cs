@@ -27,7 +27,7 @@ namespace BookingValais.Controllers
             return View("Hotel");
         }
 
-        [HttpPost]
+        [Route("api/Hotels/{dateStart}/{dateEnd}/{location}/{persons:int}")]
         public ActionResult GetHotels()
         {
             try //check if all fields have data
@@ -38,6 +38,12 @@ namespace BookingValais.Controllers
                 DateTime dateStart = Convert.ToDateTime(Request["txtDateStart"].ToString());
                 DateTime dateEnd = Convert.ToDateTime(Request["txtDateEnd"].ToString());
                 string location = Convert.ToString(Request["txtLocation"].ToString());
+
+                String dateStartText = "";
+                dateStartText = dateStart.ToString("dd-MM-yy");
+
+                String dateEndText = "";
+                dateEndText = dateEnd.ToString("dd-MM-yy");
 
                 if(persons == 0 || location == "")
                 {
@@ -67,7 +73,7 @@ namespace BookingValais.Controllers
                 //check if advanced search criteria has been selected or not
                 if (!parking && !wifi && !hasTV && !hasHairDryer && stars == 0)
                 {
-                    ViewData["ListHotels"] = HotelManager.GetAvailableHotels(dateStart, dateEnd, location, persons);
+                    ViewData["ListHotels"] = HotelManager.GetAvailableHotels(dateStartText, dateEndText, location, persons);
                 }
                     
                 else
@@ -99,8 +105,9 @@ namespace BookingValais.Controllers
                     return View("Hotel");
                 }
             }
-            catch
+            catch(Exception e)
             {
+                throw e;
                 ViewData["Error"] = "Please fill all fields !";
                 return View("Home");
             } 

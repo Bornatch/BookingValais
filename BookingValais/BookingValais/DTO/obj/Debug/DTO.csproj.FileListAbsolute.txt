@@ -13,3 +13,12 @@ C:\Users\Bornatch\source\repos\BookingValais\BookingValais\DTO\bin\Debug\Newtons
 C:\Users\Bornatch\source\repos\BookingValais\BookingValais\DTO\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Bornatch\source\repos\BookingValais\BookingValais\DTO\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Bornatch\source\repos\BookingValais\BookingValais\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\bin\Debug\DTO.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\bin\Debug\DTO.pdb
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\obj\Debug\DTO.dll
+C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\DTO\obj\Debug\DTO.pdb

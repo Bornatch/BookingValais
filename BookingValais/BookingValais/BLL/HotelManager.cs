@@ -36,20 +36,26 @@ namespace BLL
 
         }
 
-            public static List<Hotel> GetAvailableHotels(DateTime dateStart, DateTime dateEnd, string location, int persons)
+            public static List<Hotel> GetAvailableHotels(string dateStartText, string dateEndText, string location, int persons)
         {
             //based on paramaters, this method will return a list of all possible rooms
             List<Hotel> results = new List<Hotel>();
 
-            //fills list with all results from research
-            for (int i = 0; i < HotelDb.GetAvailableHotels(dateStart, dateEnd, location, persons).Count; i++)
+            String uri = baseUri + "Hotels/" + dateStartText + "/" + dateEndText + "/" + location + "/" + persons;
+            using (HttpClient httpClient = new HttpClient())
             {
-                results.Add(
-               HotelDb.GetAvailableHotels(dateStart, dateEnd, location, persons)[i]
-                );
-        }
+                Task<String> response = httpClient.GetStringAsync(uri);
+                results = JsonConvert.DeserializeObject<List<Hotel>>(response.Result);
+            }
 
             return results;
+
+            //fills list with all results from research
+            //for (int i = 0; i < HotelDb.GetAvailableHotels(dateStart, dateEnd, location, persons).Count; i++)
+
+            //results = GetHotels();
+        
+            //return results;
         }
 
     public static List<Hotel> GetAvailableHotelsAdvanced(DateTime dateStart, DateTime dateEnd, String location,

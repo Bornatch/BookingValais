@@ -18,6 +18,15 @@ namespace BookingValais
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Home", id = UrlParameter.Optional }
             );
-        }
+
+            routes.MapRoute ("Search", "api/{controller}/{dateStart}/{dateEnd}/{location}/{persons:int}",
+                new
+                {
+                    dateStart = UrlParameter.Optional,
+                    dateEnd = UrlParameter.Optional,
+                    location = UrlParameter.Optional,
+                    persons = UrlParameter.Optional
+                });
+            }
     }
 }
