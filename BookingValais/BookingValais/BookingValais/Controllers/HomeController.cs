@@ -113,7 +113,6 @@ namespace BookingValais.Controllers
                     Console.WriteLine("List hotel init");
                     ViewData["Pictures"] = pictureUrl;
                     Console.WriteLine("View data pass");
-                    Console.ReadKey();
                     return View("Hotel");
                 }
             }
