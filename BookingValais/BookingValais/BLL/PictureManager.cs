@@ -50,12 +50,14 @@ namespace BLL
             return url;
         }
         
-        public static string GetPicturesURL(int idHotel)
+        public static string GetPicturesURL(int id)
         {
             //show only one picture when presented with the list of hotels (after search)
 
             String pictureUrl;
-            String uri = baseUri + "Hotels/"+ idHotel+"/pictures";
+
+            String uri = baseUri + "GetPictures/" + id;
+
 
             using (HttpClient httpClient = new HttpClient())
             {
