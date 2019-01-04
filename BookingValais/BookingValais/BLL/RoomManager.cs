@@ -34,7 +34,7 @@ namespace BLL
         public static List<Room> GetRooms(int idHotel, DateTime dateStart, DateTime dateEnd)
         {
             List<Room> results = new List<Room>();
-            String uri = baseUri + "Hotels/"+idHotel+"/Rooms";
+            String uri = baseUri + "Rooms/"+idHotel+"/Rooms";
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);

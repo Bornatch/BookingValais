@@ -80,13 +80,12 @@ namespace BookingValais.Controllers
                 if (!parking && !wifi && !hasTV && !hasHairDryer && stars == 0)
                 {
                     ViewData["ListHotels"] = HotelManager.GetAvailableHotels(dateStartText, dateEndText, location, persons);
-                    Console.WriteLine("not advanced pass");
                 }                
                     
                 else
                 {
-                    ViewData["ListHotels"] = HotelManager.GetAvailableHotelsAdvanced(dateStart, dateEnd, location, wifi, parking, stars, persons, hasTV, hasHairDryer);
-                    Console.WriteLine(" advanced pass");
+                    ViewData["ListHotels"] = HotelManager.GetAvailableHotelsAdvanced(dateStartText, dateEndText, location, persons, Request.Form.GetValues("checkWifi")[0],
+                        Request.Form.GetValues("checkParking")[0], stars, Request.Form.GetValues("checkTV")[0], Request.Form.GetValues("checkHairDryer")[0]);
                 }
                     
 
@@ -108,12 +107,11 @@ namespace BookingValais.Controllers
                     List<string> pictureUrl = new List<string>();
                     foreach(DTO.Hotel hotel in listHotel)
                     {
-                        pictureUrl.Add(PictureManager.GetPicturesURL(hotel.IdHotel));                        
+                        pictureUrl.AddRange(PictureManager.GetPicturesHotel(hotel.IdHotel));
                     }
                     Console.WriteLine("List hotel init");
                     ViewData["Pictures"] = pictureUrl;
-                    Console.WriteLine("View data pass");
-                    Console.ReadKey();
+                    
                     return View("Hotel");
                 }
             }
