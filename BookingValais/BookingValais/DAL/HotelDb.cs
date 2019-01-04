@@ -15,12 +15,12 @@ namespace DAL
         {
             Hotel result = new Hotel();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM Hotel WHERE IdHotel = @idHotel";
+                    string query = "SELECT * FROM Hotels WHERE IdHotel = @idHotel";
                     
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("idHotel", idHotel);
@@ -62,43 +62,43 @@ namespace DAL
             dateStart = dateStart.AddSeconds(86399);
             dateEnd = dateEnd.AddSeconds(86399);
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT DISTINCT Hotel.IdHotel, Name, Hotel.Description, Location, Category, HasWifi, HasParking, Phone, Email, Website FROM Hotel "
-                        + "INNER JOIN Room ON Room.IdHotel = Hotel.IdHotel " +
-                        "WHERE Room.IdHotel IN( " +
-                        "SELECT Room.IdHotel " +
-                        "FROM Room " +
+                    string query = "SELECT DISTINCT Hotels.IdHotel, Name, Hotels.Description, Location, Category, HasWifi, HasParking, Phone, Email, Website FROM Hotels "
+                        + "INNER JOIN Rooms ON Rooms.IdHotel = Hotels.IdHotel " +
+                        "WHERE Rooms.IdHotel IN( " +
+                        "SELECT Rooms.IdHotel " +
+                        "FROM Rooms " +
                         "WHERE IdRoom NOT IN( " +
-                        "SELECT Room.IdRoom FROM Room " +
-                        "INNER JOIN RoomReservation ON Room.IdRoom = RoomReservation.IdRoom " +
-                        "INNER JOIN Reservation ON RoomReservation.IdReservation = Reservation.idReservation " +
-                        "INNER JOIN Hotel ON Room.IdHotel = Hotel.IdHotel " +
-                        "WHERE(@DateStart <= Reservation.DateEnd) AND (@DateEnd >= Reservation.DateStart) AND Room.Type != @Persons ";
+                        "SELECT Rooms.IdRoom FROM Rooms " +
+                        "INNER JOIN RoomReservations ON Rooms.IdRoom = RoomReservations.Room_IdRoom " +
+                        "INNER JOIN Reservations ON RoomReservations.Reservation_IdReservation = Reservations.idReservation " +
+                        "INNER JOIN Hotels ON Rooms.IdHotel = Hotels.IdHotel " +
+                        "WHERE(@DateStart <= Reservations.DateEnd) AND (@DateEnd >= Reservations.DateStart) AND Rooms.Type != @Persons ";
 
                     //only tests this criteria if the checkbox has been ticked
                     if (hasTV == true)
-                        query = query + "AND Room.HasTV = @HasTV ";
+                        query = query + "AND Rooms.HasTV = @HasTV ";
                     if (hasHairDryer == true)
-                        query = query + "AND Room.HasHairDryer = @HasHairDryer";
+                        query = query + "AND Rooms.HasHairDryer = @HasHairDryer";
 
                     query = query + "))" +
                         "AND " +
-                        "Hotel.IdHotel IN( " +
-                        "SELECT Hotel.IdHotel FROM Hotel " +
+                        "Hotels.IdHotel IN( " +
+                        "SELECT Hotels.IdHotel FROM Hotels " +
                         "WHERE " +
                         "Hotel.Location = @Location AND ";
 
                     //only test this criteria if the checkbox has been ticked
                     if (hasParking == true)
-                        query = query + "Hotel.HasParking = @HasParking AND ";
+                        query = query + "Hotels.HasParking = @HasParking AND ";
                     if (hasWifi == true)
-                        query = query + "Hotel.HasWifi = @HasWifi AND ";
+                        query = query + "Hotels.HasWifi = @HasWifi AND ";
 
-                    query = query + "Hotel.Category >= @Category);";
+                    query = query + "Hotels.Category >= @Category);";
 
 
                     SqlCommand cmd = new SqlCommand(query, cn);
@@ -157,28 +157,28 @@ namespace DAL
             dateStart = dateStart.AddSeconds(86399);
             dateEnd = dateEnd.AddSeconds(86399);
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT DISTINCT Hotel.IdHotel, Name, Hotel.Description, Location, Category, HasWifi, HasParking, Phone, Email, Website FROM Hotel "
-                        + "INNER JOIN Room ON Room.IdHotel = Hotel.IdHotel " +
-                        "WHERE Room.IdHotel IN( " +
-                        "SELECT Room.IdHotel " +
-                        "FROM Room " +
+                    string query = "SELECT DISTINCT Hotels.IdHotel, Name, Hotels.Description, Location, Category, HasWifi, HasParking, Phone, Email, Website FROM Hotels "
+                        + "INNER JOIN Rooms ON Rooms.IdHotel = Hotels.IdHotel " +
+                        "WHERE Rooms.IdHotel IN( " +
+                        "SELECT Rooms.IdHotel " +
+                        "FROM Rooms " +
                         "WHERE IdRoom NOT IN( " +
-                        "SELECT Room.IdRoom FROM Room " +
-                        "INNER JOIN RoomReservation ON Room.IdRoom = RoomReservation.IdRoom " +
-                        "INNER JOIN Reservation ON RoomReservation.IdReservation = Reservation.idReservation " +
-                        "INNER JOIN Hotel ON Room.IdHotel = Hotel.IdHotel " +
-                        "WHERE(@DateStart <= Reservation.DateEnd) AND(@DateEnd >= Reservation.DateStart))" +
+                        "SELECT Rooms.IdRoom FROM Rooms " +
+                        "INNER JOIN RoomReservations ON Rooms.IdRoom = RoomReservations.Room_IdRoom " +
+                        "INNER JOIN Reservations ON RoomReservations.Reservation_IdReservation = Reservations.idReservation " +
+                        "INNER JOIN Hotels ON Rooms.IdHotel = Hotels.IdHotel " +
+                        "WHERE(@DateStart <= Reservations.DateEnd) AND(@DateEnd >= Reservations.DateStart))" +
                         "AND " +
-                        "Hotel.IdHotel IN( " +
-                        "SELECT IdHotel FROM Hotel " +
+                        "Hotels.IdHotel IN( " +
+                        "SELECT IdHotel FROM Hotels " +
                         "WHERE " +
                         "Hotel.Location = @Location) " +
-                        "GROUP BY Room.IdHotel, Room.IdRoom);";
+                        "GROUP BY Rooms.IdHotel, Rooms.IdRoom);";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
 

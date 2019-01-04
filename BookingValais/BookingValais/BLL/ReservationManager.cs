@@ -1,18 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using DTO;
+using Newtonsoft.Json;
 
 namespace BLL
 {
     public class ReservationManager
     {
-        public static void DeleteReservation(int idReservation)
+        static String baseUri = "http://localhost:3749/api/Reservations/";
+
+        public static void DeleteReservation(int id)
+            //id = idReservation
         {
-            ReservationDb.DeleteReservation(idReservation);
+            string uri = baseUri + "DeleteReservation/" + id;
+            Reservation reservation = null;
+            using (HttpClient httpClient = new HttpClient())
+            {
+
+                Task<String> response = httpClient.GetStringAsync(uri);
+                reservation = JsonConvert.DeserializeObject<Reservation>(response.Result);
+            }
+
         }
 
         public static void DeleteRoomReservation(int idReservation)
