@@ -27,7 +27,7 @@ namespace BookingValais.Controllers
             return View("Hotel");
         }
 
-        [Route("api/Hotels/{dateStart}/{dateEnd}/{location}/{persons:int}")]
+        [Route("api/Hotels/{action}/{dateStart}/{dateEnd}/{location}/{persons}")]
         public ActionResult GetHotels()
         {
             try //check if all fields have data
@@ -40,10 +40,10 @@ namespace BookingValais.Controllers
                 string location = Convert.ToString(Request["txtLocation"].ToString());
 
                 String dateStartText = "";
-                dateStartText = dateStart.ToString("dd-MM-yy");
+                dateStartText = dateStart.ToString("dd-MM-yyyy");
 
                 String dateEndText = "";
-                dateEndText = dateEnd.ToString("dd-MM-yy");
+                dateEndText = dateEnd.ToString("dd-MM-yyyy");
 
                 if(persons == 0 || location == "")
                 {

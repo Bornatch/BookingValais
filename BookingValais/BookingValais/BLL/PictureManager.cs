@@ -21,12 +21,12 @@ namespace BLL
             return PictureDb.GetAllPicturesURL(idHotel);
         }
         
-        public static string GetPicturesURL(int idHotel)
+        public static string GetPicturesURL(int id)
         {
             //show only one picture when presented with the list of hotels (after search)
 
             String pictureUrl;
-            String uri = baseUri + idHotel;
+            String uri = baseUri + "GetPictures/" + id;
 
             using (HttpClient httpClient = new HttpClient())
             {

@@ -19,7 +19,7 @@ namespace BookingValais
                 defaults: new { controller = "Home", action = "Home", id = UrlParameter.Optional }
             );
 
-            routes.MapRoute ("Search", "api/{controller}/{dateStart}/{dateEnd}/{location}/{persons:int}",
+            routes.MapRoute ("Search", "api/{controller}/{action}/{dateStart}/{dateEnd}/{location}/{persons:int}",
                 new
                 {
                     dateStart = UrlParameter.Optional,

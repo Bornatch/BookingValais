@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using DAL;
 using DTO;
-
 namespace BLL
 {
     public class HotelManager
@@ -36,12 +35,12 @@ namespace BLL
 
         }
 
-            public static List<Hotel> GetAvailableHotels(string dateStartText, string dateEndText, string location, int persons)
+            public static List<Hotel> GetAvailableHotels(string dateStart, string dateEnd, string location, int persons)
         {
             //based on paramaters, this method will return a list of all possible rooms
             List<Hotel> results = new List<Hotel>();
 
-            String uri = baseUri + "Hotels/" + dateStartText + "/" + dateEndText + "/" + location + "/" + persons;
+            String uri = baseUri + "Hotels/GetAvailableHotels/" + dateStart + "/" + dateEnd + "/" + location + "/" + persons;
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
