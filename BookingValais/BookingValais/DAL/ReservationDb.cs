@@ -13,12 +13,12 @@ namespace DAL
     {
         public static void DeleteReservation(int idReservation)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "DELETE FROM Reservation WHERE idReservation = @idReservation";
+                    string query = "DELETE FROM Reservations WHERE idReservation = @idReservation";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("idReservation", idReservation);
@@ -35,12 +35,12 @@ namespace DAL
 
         public static void DeleteRoomReservation(int idReservation)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "DELETE FROM RoomReservation WHERE idReservation = @idReservation";
+                    string query = "DELETE FROM RoomReservations WHERE Reservation_IdReservation = @idReservation";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("idReservation", idReservation);
@@ -57,12 +57,12 @@ namespace DAL
 
         public static void AddNewReservation(int idClient, DateTime dateStart, DateTime dateEnd, decimal totalPrice)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO Reservation (idClient, DateStart, DateEnd, TotalPrice) " +
+                    string query = "INSERT INTO Reservations (idClient, DateStart, DateEnd, TotalPrice) " +
                                     "VALUES(@idClient, @DateStart, @DateEnd, @TotalPrice)";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
@@ -83,12 +83,12 @@ namespace DAL
 
         public static void AddNewRoomReservation(int idRoom, int idReservation)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "INSERT INTO RoomReservation (IdRoom, IdReservation) " +
+                    string query = "INSERT INTO RoomReservations (Room_IdRoom, Reservation_IdReservation) " +
                                     "VALUES(@IdRoom, @IdReservation)";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
@@ -109,19 +109,19 @@ namespace DAL
         {
             List<Reservation> results = new List<Reservation>();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
 
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT DISTINCT Reservation.DateStart, Reservation.DateEnd, Reservation.idReservation, Reservation.TotalPrice, " +
-                        "(SELECT Name FROM Hotel WHERE IdHotel = " +
-                        "(SELECT IdHotel From Room WHERE Room.IdRoom = RoomReservation.IdRoom)) As Hotel " +
-                        "FROM Reservation " + 
-                        "INNER JOIN RoomReservation ON Reservation.idReservation = RoomReservation.IdReservation " +
-                        "INNER JOIN Room ON RoomReservation.IdRoom = Room.IdRoom " +
-                        "WHERE Reservation.idClient = @IdClient AND Reservation.DateStart >= @Today;";
+                    string query = "SELECT DISTINCT Reservations.DateStart, Reservations.DateEnd, Reservatiosn.idReservation, Reservations.TotalPrice, " +
+                        "(SELECT Name FROM Hotels WHERE IdHotel = " +
+                        "(SELECT IdHotel From Rooms WHERE Rooms.IdRoom = RoomReservations.Room_IdRoom)) As Hotels " +
+                        "FROM Reservations " + 
+                        "INNER JOIN RoomReservations ON Reservations.idReservation = RoomReservations.Reservation_IdReservation " +
+                        "INNER JOIN Rooms ON RoomReservations.Room_IdRoom = Rooms.IdRoom " +
+                        "WHERE Reservations.idClient = @IdClient AND Reservations.DateStart >= @Today;";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
 
@@ -160,14 +160,14 @@ namespace DAL
         //used in order to delete the appropriate reservation
         public static int GetLastIdReservation()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             int result = 0;
 
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT TOP 1 * FROM Reservation ORDER BY idReservation DESC";
+                    string query = "SELECT TOP 1 * FROM Reservations ORDER BY idReservation DESC";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
 

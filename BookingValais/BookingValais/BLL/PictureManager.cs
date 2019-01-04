@@ -26,7 +26,7 @@ namespace BLL
             //show only one picture when presented with the list of hotels (after search)
 
             String pictureUrl;
-            String uri = baseUri + "GetPictures/" + id;
+            String uri = baseUri + "GetPicture/" + id;
 
             using (HttpClient httpClient = new HttpClient())
             {

@@ -26,12 +26,12 @@ namespace DAL
         {
             Room room = new Room();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM Room Where IdRoom = @IdRoom";
+                    string query = "SELECT * FROM RoRoomsom Where IdRoom = @IdRoom";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("IdRoom", idRoom);
@@ -65,24 +65,24 @@ namespace DAL
         {
             List<Room> results = new List<Room>();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT Room.IdRoom, Room.Description, Room.Type, Room.Price, Room.HasTV, Room.HasHairDryer " +
-                                        "FROM Room " +
-                                        "WHERE Room.IdHotel = @idHotel AND " +
-                                        "Room.IdRoom NOT IN( " +
-                                            "SELECT DISTINCT Room.IdRoom " +
-                                            "FROM Room " +
-                                            "INNER JOIN RoomReservation ON Room.IdRoom = RoomReservation.IdRoom " +
-                                            "INNER JOIN Reservation ON RoomReservation.IdReservation = Reservation.IdReservation " +
-                                            "INNER JOIN Hotel ON Room.IdHotel = Hotel.IdHotel " +
-                                            "WHERE(@dateStart <= Reservation.DateEnd) " +
-                                            "AND(@dateEnd > Reservation.DateStart) " +
-                                            "AND Room.IdHotel = @idHotel) " +
-                                        "ORDER BY Room.Price;";
+                    string query = "SELECT Rooms.IdRoom, Rooms.Description, Rooms.Type, Rooms.Price, Rooms.HasTV, Rooms.HasHairDryer " +
+                                        "FROM Rooms " +
+                                        "WHERE Rooms.IdHotel = @idHotel AND " +
+                                        "Rooms.IdRoom NOT IN( " +
+                                            "SELECT DISTINCT Rooms.IdRoom " +
+                                            "FROM Rooms " +
+                                            "INNER JOIN RoomReservations ON Rooms.IdRoom = RoomReservations.Room_IdRoom " +
+                                            "INNER JOIN Reservations ON RoomReservations.Reservation_IdReservation = Reservations.IdReservation " +
+                                            "INNER JOIN Hotels ON Rooms.IdHotel = Hotels.IdHotel " +
+                                            "WHERE(@dateStart <= Reservations.DateEnd) " +
+                                            "AND(@dateEnd > Reservations.DateStart) " +
+                                            "AND Rooms.IdHotel = @idHotel) " +
+                                        "ORDER BY Rooms.Price;";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("idHotel", idHotel);
@@ -142,7 +142,7 @@ namespace DAL
         {
             int result = 0;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
@@ -176,12 +176,12 @@ namespace DAL
         {
             int result = 0;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT COUNT(*) FROM Room WHERE IdHotel = @idHotel;";
+                    string query = "SELECT COUNT(*) FROM Rooms WHERE IdHotel = @idHotel;";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("idHotel", idHotel);

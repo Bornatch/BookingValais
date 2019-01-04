@@ -16,12 +16,12 @@ namespace DAL
         {
             Client client = new Client();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM Client Where Name = @Name AND Surname = @Surname AND Password = @Password";
+                    string query = "SELECT * FROM Clients Where Name = @Name AND Surname = @Surname AND Password = @Password";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("Surname", surname);

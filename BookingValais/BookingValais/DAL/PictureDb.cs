@@ -14,13 +14,13 @@ namespace DAL
         public static List<string> GetAllPicturesURL(int idHotel)
         {
             List<string> results = new List<string>();
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT DISTINCT Url FROM Picture WHERE Picture.IdRoom IN" +
-                                     "(SELECT IdRoom FROM Room WHERE Room.IdHotel = @idHotel);";
+                    string query = "SELECT DISTINCT Url FROM Pictures WHERE Pictures.Room_IdRoom IN" +
+                                     "(SELECT IdRoom FROM Rooms WHERE Rooms.IdHotel = @idHotel);";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("idHotel", idHotel);
@@ -48,15 +48,15 @@ namespace DAL
         {
             string result = "";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["HotelValais"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["HotelContext-20190102113238"].ConnectionString;
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
                     //get the first image of the query
-                    string query = "SELECT TOP 1 Url, IdPicture, IdPicture FROM Picture WHERE Picture.IdRoom IN" +
-                                     "(SELECT IdRoom FROM Room WHERE Room.IdHotel = @idHotel)" +
-                                     "ORDER BY Picture.IdPicture ASC;";
+                    string query = "SELECT TOP 1 Url, IdPicture, IdPicture FROM Pictures WHERE Pictures.Room_IdRoom IN" +
+                                     "(SELECT IdRoom FROM Rooms WHERE Rooms.IdHotel = @idHotel)" +
+                                     "ORDER BY Pictures.IdPicture ASC;";
 
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("idHotel", idHotel);

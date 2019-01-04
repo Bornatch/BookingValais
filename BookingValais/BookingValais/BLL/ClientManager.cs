@@ -5,15 +5,28 @@ using System.Linq;
 using System.Text;
 using DTO;
 using DAL;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace BLL
 {
     public class ClientManager
     {
+        static String baseUri = "http://localhost:3749/api/Clients/";
+
         //Get Client for login purposes
         public static Client GetClient(string surname, string name, string password)
         {
-            Client client = DAL.ClientDb.GetClient(surname, name, password);
+            string uri = baseUri + "GetClient/" + surname + "/" + name + "/" + password;
+            Client client = null;
+            using (HttpClient httpClient = new HttpClient())
+            {
+
+                Task<String> response = httpClient.GetStringAsync(uri);
+                client = JsonConvert.DeserializeObject<Client>(response.Result);
+            }
+
             return client;
         }
     }

@@ -24,7 +24,7 @@ namespace BLL
         public static List<Hotel> GetHotels()
         {
             List<Hotel> hotels;
-            String uri = baseUri + "Hotels";
+            String uri = baseUri + "Hotels/GetHotels";
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
