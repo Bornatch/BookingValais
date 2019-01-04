@@ -19,7 +19,14 @@ namespace BLL
 
         public static Hotel GetHotel(int idHotel)
         {
-            return HotelDb.GetHotel(idHotel);
+            Hotel h = new Hotel();
+            String uri = baseUri + "Hotels/"+idHotel;
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<String> response = httpClient.GetStringAsync(uri);
+                h = JsonConvert.DeserializeObject<Hotel>(response.Result);
+            }
+            return h;
         }
 
         public static List<Hotel> GetHotels()

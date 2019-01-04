@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
-using DTO;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using DAL;
+using DTO;
+
 
 namespace BLL
 {
     public class RoomManager
     {
+
+        static String baseUri = "http://localhost:3749/api/";
+
         public static List<Room> GetAllRoomsByListId(List<int> idRooms)
         {
+            
             List<Room> results = new List<Room>();
-            results = RoomDb.GetAllRoomsByListId(idRooms);
+            String uri = baseUri + "Rooms/";
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<String> response = httpClient.GetStringAsync(uri);
+                results = JsonConvert.DeserializeObject<List<Room>>(response.Result);
+            }
 
             return results;
         }
@@ -21,15 +34,15 @@ namespace BLL
         public static List<Room> GetRooms(int idHotel, DateTime dateStart, DateTime dateEnd)
         {
             List<Room> results = new List<Room>();
-
-            for(int i = 0; i < RoomDb.GetRooms(idHotel, dateStart, dateEnd).Count; i++)
+            String uri = baseUri + "Hotels/"+idHotel+"/Rooms";
+            using (HttpClient httpClient = new HttpClient())
             {
-                //loop through results of method to fill list
-                results.Add(RoomDb.GetRooms(idHotel, dateStart, dateEnd)[i]);
+                Task<String> response = httpClient.GetStringAsync(uri);
+                results = JsonConvert.DeserializeObject<List<Room>>(response.Result);
             }
 
-        return results;
-     
+            return results;
+
         }
     }
 }

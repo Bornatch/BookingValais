@@ -14,11 +14,40 @@ namespace BLL
     public class PictureManager
     {
         //static HttpClient client = new HttpClient();
-        static String baseUri = "http://localhost:3749/api/Pictures/";
+        static String baseUri = "http://localhost:3749/api/";
+
+        public static List<Picture> getPictures()
+        {
+            List<Picture> results = new List<Picture>();
+            String uri = baseUri+"/Pictures";
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<String> response = httpClient.GetStringAsync(uri);
+                results = JsonConvert.DeserializeObject<List<Picture>>(response.Result);
+            }
+
+            return results;
+        }
 
         public static List<string> GetAllPicturesURL(int idHotel)
         {
-            return PictureDb.GetAllPicturesURL(idHotel);
+            List<String> url = new List<string>();
+            List<Picture> results = new List<Picture>();
+
+            String uri = baseUri+ "api / Hotels /"+idHotel+"/ pictures";
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<String> response = httpClient.GetStringAsync(uri);
+                results = JsonConvert.DeserializeObject<List<Picture>>(response.Result);
+            }
+
+            foreach(Picture p in results)
+            {
+                url.Add(p.Url);
+            }
+
+            return url;
         }
         
         public static string GetPicturesURL(int idHotel)
@@ -26,12 +55,13 @@ namespace BLL
             //show only one picture when presented with the list of hotels (after search)
 
             String pictureUrl;
-            String uri = baseUri + idHotel;
+            String uri = baseUri + "Hotels/"+ idHotel+"/pictures";
 
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
                 pictureUrl = response.Result;
+                Console.WriteLine(pictureUrl);
 
                 //parse url to get the correct format
                 pictureUrl = pictureUrl.Substring(0, pictureUrl.Length - 2);

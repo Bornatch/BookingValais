@@ -30,7 +30,8 @@ namespace BookingValais.Controllers
         [Route("api/Hotels/{dateStart}/{dateEnd}/{location}/{persons:int}")]
         public ActionResult GetHotels()
         {
-            try //check if all fields have data
+            Console.WriteLine("Enter try");
+            try //check if all fields have data            
             {
                 DateTime today = DateTime.Now;
                 //simple search
@@ -41,28 +42,32 @@ namespace BookingValais.Controllers
 
                 String dateStartText = "";
                 dateStartText = dateStart.ToString("dd-MM-yy");
-
+                Console.WriteLine("dateStart pass");
                 String dateEndText = "";
                 dateEndText = dateEnd.ToString("dd-MM-yy");
-
-                if(persons == 0 || location == "")
+                Console.WriteLine("dateend pass");
+                if (persons == 0 || location == "")
                 {
                     ViewData["Error"] = "Please fill all fields";
                     return View("Home");
                 }
+                Console.WriteLine("person pass");
 
-                if(dateStart < today)
+                if (dateStart < today)
                 {
                     ViewData["Error"] = "Your check-in must be at least tomorrow.";
                     return View("Home");
                 }
+                Console.WriteLine("today check pass");
 
-                if(dateEnd < dateStart)
+                if (dateEnd < dateStart)
                 {
                     ViewData["Error"] = "Your check-out must be after your check-in";
                     return View("Home");
                 }
-                    
+
+                Console.WriteLine("diff date pass");
+
                 //advanced search
                 Boolean parking = Convert.ToBoolean(Request.Form.GetValues("checkParking")[0]);
                 Boolean wifi = Convert.ToBoolean(Request.Form.GetValues("checkWifi")[0]);
@@ -74,11 +79,13 @@ namespace BookingValais.Controllers
                 if (!parking && !wifi && !hasTV && !hasHairDryer && stars == 0)
                 {
                     ViewData["ListHotels"] = HotelManager.GetAvailableHotels(dateStartText, dateEndText, location, persons);
-                }
+                    Console.WriteLine("not advanced pass");
+                }                
                     
                 else
                 {
                     ViewData["ListHotels"] = HotelManager.GetAvailableHotelsAdvanced(dateStart, dateEnd, location, wifi, parking, stars, persons, hasTV, hasHairDryer);
+                    Console.WriteLine(" advanced pass");
                 }
                     
 
@@ -87,7 +94,7 @@ namespace BookingValais.Controllers
 
                 //create IEnumerable variable to count and check if search yields any results
                 IEnumerable<DTO.Hotel> listHotel = ViewData["ListHotels"] as IEnumerable<DTO.Hotel>;
-
+                
                 if (listHotel.Count() == 0) //if no results
                 {
                     ViewData["Error"] = "No hotels were found with these parameters.";
@@ -96,21 +103,27 @@ namespace BookingValais.Controllers
                 else
                 {
                     //get pictures
+                    Console.WriteLine("List Hotel enter");
                     List<string> pictureUrl = new List<string>();
                     foreach(DTO.Hotel hotel in listHotel)
                     {
-                        pictureUrl.Add(PictureManager.GetPicturesURL(hotel.IdHotel));
+                        pictureUrl.Add(PictureManager.GetPicturesURL(hotel.IdHotel));                        
                     }
+                    Console.WriteLine("List hotel init");
                     ViewData["Pictures"] = pictureUrl;
+                    Console.WriteLine("View data pass");
+                    Console.ReadKey();
                     return View("Hotel");
                 }
             }
+
             catch(Exception e)
             {
                 throw e;
                 ViewData["Error"] = "Please fill all fields !";
                 return View("Home");
-            } 
+            }
+            
         }
 
         public int GetNumberValue(string value)
