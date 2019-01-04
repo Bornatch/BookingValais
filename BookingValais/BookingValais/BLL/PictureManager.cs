@@ -29,12 +29,12 @@ namespace BLL
             return results;
         }
 
-        public static List<string> GetAllPicturesURL(int idHotel)
+        public static List<string> GetPicturesHotel(int idHotel)
         {
             List<String> url = new List<string>();
             List<Picture> results = new List<Picture>();
 
-            String uri = baseUri+ "api / Hotels /"+idHotel+"/ pictures";
+            String uri = baseUri+ "GetPicturesHotel/"+idHotel;
 
             using (HttpClient httpClient = new HttpClient())
             {
@@ -55,8 +55,12 @@ namespace BLL
             //show only one picture when presented with the list of hotels (after search)
 
             String pictureUrl;
+<<<<<<< HEAD
             String uri = baseUri + "GetPicture/" + id;
+=======
+>>>>>>> fe9d13295a104f6484a287d172c8e26fb3a55c73
 
+            String uri = baseUri + "GetPicture/" + id;
 
             using (HttpClient httpClient = new HttpClient())
             {

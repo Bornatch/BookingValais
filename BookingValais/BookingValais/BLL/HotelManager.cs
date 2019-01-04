@@ -19,7 +19,7 @@ namespace BLL
         public static Hotel GetHotel(int idHotel)
         {
             Hotel h = new Hotel();
-            String uri = baseUri + "Hotels/"+idHotel;
+            String uri = baseUri + "Hotels/GetHotel/" + idHotel;
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
@@ -64,21 +64,24 @@ namespace BLL
             //return results;
         }
 
-    public static List<Hotel> GetAvailableHotelsAdvanced(DateTime dateStart, DateTime dateEnd, String location,
-                            Boolean hasWifi, Boolean hasParking, int category, int persons, Boolean hasTV, Boolean hasHairDryer)
+    public static List<Hotel> GetAvailableHotelsAdvanced(string dateStart, string dateEnd, String location, int persons,
+                            string hasWifi, string hasParking, int category, string hasTV, string hasHairDryer)
     {
         //based on paramaters, this method will return a list of all possible rooms
         List<Hotel> results = new List<Hotel>();
 
-        //fills list with all results from research
-        for (int i = 0; i < HotelDb.GetAvailableHotelsAdvanced(dateStart, dateEnd, location, hasWifi, hasParking, category, persons, true, true).Count; i++)
-        {
-            results.Add(
-            HotelDb.GetAvailableHotelsAdvanced(dateStart, dateEnd, location, hasWifi, hasParking, category, persons, true, true)[i]
-            );
-        }
+            String uri = baseUri + "Hotels/GetAvailableHotelsAdvanced/" + dateStart + "/" + dateEnd + "/" + location + "/" +  hasWifi + 
+                "/" + hasParking + "/" + category + "/" + persons + "/" + hasTV + "/" + hasHairDryer;
 
-        return results;
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Task<String> response = httpClient.GetStringAsync(uri);
+                results = JsonConvert.DeserializeObject<List<Hotel>>(response.Result);
+            }
+
+            return results;
+
+            return results;
      }
         
     }
