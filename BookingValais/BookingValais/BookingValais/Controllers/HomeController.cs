@@ -119,10 +119,10 @@ namespace BookingValais.Controllers
             }
 
             catch(Exception e)
-            {
-                throw e;
+            {                
                 ViewData["Error"] = "Please fill all fields !";
                 return View("Home");
+                throw e;
             }
             
         }

@@ -14,7 +14,7 @@ namespace BLL
     public class PictureManager
     {
         //static HttpClient client = new HttpClient();
-        static String baseUri = "http://localhost:3749/api/";
+        static String baseUri = "http://localhost:3749/api/Pictures/";
 
         public static List<Picture> getPictures()
         {
@@ -34,7 +34,7 @@ namespace BLL
             List<String> url = new List<string>();
             List<Picture> results = new List<Picture>();
 
-            String uri = baseUri+ "api / Hotels /"+idHotel+"/ pictures";
+            String uri = baseUri+ "Hotels/"+idHotel+"/pictures";
 
             using (HttpClient httpClient = new HttpClient())
             {
