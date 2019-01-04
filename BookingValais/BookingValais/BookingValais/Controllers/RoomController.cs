@@ -14,7 +14,7 @@ namespace BookingValais.Controllers
         {
             ViewData["Hotel"] = HotelManager.GetHotel(idHotel);
             ViewData["ListRooms"] = RoomManager.GetRooms(idHotel, dateStart, dateEnd);
-            ViewData["Pictures"] = PictureManager.GetAllPicturesURL(idHotel);
+            ViewData["Pictures"] = PictureManager.GetPicturesURL(idHotel);
             ViewData["dateStart"] = dateStart;
             ViewData["dateEnd"] = dateEnd;
             return View("Room");
