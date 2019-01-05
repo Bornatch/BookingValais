@@ -12,8 +12,10 @@ namespace BookingValais.Controllers
         // GET: Room
         public ActionResult Index(int idHotel, DateTime dateStart, DateTime dateEnd)
         {
+            string dateStartText = dateStart.ToString("dd-MM-yyyy");
+            string dateEndText = dateEnd.ToString("dd-MM-yyyy");
             ViewData["Hotel"] = HotelManager.GetHotel(idHotel);
-            ViewData["ListRooms"] = RoomManager.GetRooms(idHotel, dateStart, dateEnd);
+            ViewData["ListRooms"] = RoomManager.GetRooms(idHotel, dateStartText, dateEndText);
             ViewData["Pictures"] = PictureManager.GetPicturesURL(idHotel);
             ViewData["dateStart"] = dateStart;
             ViewData["dateEnd"] = dateEnd;

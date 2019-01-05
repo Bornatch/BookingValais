@@ -41,8 +41,8 @@ namespace BookingValais.Controllers
                 string location = Convert.ToString(Request["txtLocation"].ToString());
 
                 String dateStartText = "";
-
                 dateStartText = dateStart.ToString("dd-MM-yyyy");
+
 
                 String dateEndText = "";
                 dateEndText = dateEnd.ToString("dd-MM-yyyy");
