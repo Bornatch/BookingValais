@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Confirmation";
     List<Room> listOfRoomsToBook = (List<Room>)ViewData["listRoomsToBook"];
+    ViewData["Error"] = "";
 
 }
 
@@ -15,15 +16,15 @@
         <!-- go through ViewData to show the rooms the user wants to reserve-->
         @foreach (var item in ViewData["listRoomsToBook"] as IEnumerable<Room>)
         {
-        string description = item.Description;
-        description = description.Replace("<p>", "");
-        description = description.Replace("</p>", "");
+            string description = item.Description;
+            description = description.Replace("<p>", "");
+            description = description.Replace("</p>", "");
 
-        <li>
-            @description- Room for @item.Type  person(s)
-            <input type="number" class="hidden" value=@item.IdRoom name="selectedRooms" />
-        </li>
-        
+            <li>
+                @description- Room for @item.Type  person(s)
+                <input type="number" class="hidden" value=@item.IdRoom name="selectedRooms" />
+            </li>
+
         }
     </ul>
 
@@ -33,6 +34,9 @@
     <input type="text" class="hidden" value=@ViewData["dateEnd"] name="dateEnd" />
     <p>Total price : @ViewData["totalPrice"]</p>
     <input type="text" class="hidden" value=@ViewData["totalPrice"] name="totalPrice" />
+
+
+    <p style="color:red">@ViewData["Error"]</p>
 
     <input type="submit" value="Confirm the reservation." />
 }

@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Hotel";
+    ViewData["Error"] = "";
 }
 
 <h2>Available Hotels</h2>
@@ -14,13 +15,13 @@
 @foreach (var item in ViewData["ListHotels"] as IEnumerable<DTO.Hotel>)
 {
     <p>
-    <h1>@item.Name</h1>
+        <h1>@item.Name</h1>
 
-    <!-- counts the amount of stars and inserts an image-->
-    @for(int i = 0; i<item.Category; i++)
-    {
-      <img src="~/Content/Images/star.png" alt="Stars" style="height:20px; width:20px;">
-    }
+        <!-- counts the amount of stars and inserts an image-->
+        @for (int i = 0; i < item.Category; i++)
+        {
+            <img src="~/Content/Images/star.png" alt="Stars" style="height:20px; width:20px;">
+        }
     </p>
 
     <p>
@@ -36,16 +37,19 @@
     description = description.Replace("</p>", "\n");
 
     item.Description = description;
-    
+
     <p>
         @item.Description
     </p>
-    
+
     <p>
         <input type="button" value="More information ..." onclick="location.href='@Url.Action("Index", "Room", new RouteValueDictionary(new { idHotel = item.IdHotel, dateStart = ViewData["DateStart"], dateEnd = ViewData["DateEnd"]}))'" />
     </p>
 
-    
+    <p style="color:red">@ViewData["Error"]</p>
+
+
+
 }
 
 

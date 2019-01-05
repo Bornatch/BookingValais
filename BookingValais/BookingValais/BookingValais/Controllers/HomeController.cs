@@ -61,6 +61,12 @@ namespace BookingValais.Controllers
                 }
                 Console.WriteLine("today check pass");
 
+                if (dateEnd == dateStart)
+                {
+                    ViewData["Error"] = "Your check-out must be after your check-in";
+                    return View("Home");
+                }
+
                 if (dateEnd < dateStart)
                 {
                     ViewData["Error"] = "Your check-out must be after your check-in";

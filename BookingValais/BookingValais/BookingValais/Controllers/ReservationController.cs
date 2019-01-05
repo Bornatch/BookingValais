@@ -19,6 +19,11 @@ namespace BookingValais.Controllers
 
         public ActionResult ReserveRoom(int numberRooms, string dateStart, string dateEnd, string[] selectedRoom)
         {
+            if(selectedRoom == null)
+            {
+                ViewData["Error"] = "Please select a room";
+                return null;
+            }
             if (Session["IdClient"] == null)
             {
                 ViewData["Error"] = "You need to login in order to book a room.";

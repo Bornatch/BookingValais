@@ -19,18 +19,18 @@ namespace BookingValais.Controllers
         [HttpPost]
         public ActionResult Login(string password)
         {
-            Client client = new Client();
+            Client client = null;
             
             string surname = Request["surname"];
             string name = Request["name"];
 
             client = ClientManager.GetClient(surname, name, password);
-
-            if (client.Surname == null)
+            if(client == null)
             {
                 ViewData["Error"] = "The user is unknown.";
                 return View("Login");
             }
+
             else
             {
                 Session["IdClient"] = client;

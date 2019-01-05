@@ -18,9 +18,16 @@ namespace BLL
             //id = idReservation
         {
             string uri = baseUri + "Reservations/DeleteReservation/" + id;
-            using (HttpClient httpClient = new HttpClient())
+
+            using (HttpClient httpClientRes = new HttpClient())
             {
-                Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
+                Task<HttpResponseMessage> response = httpClientRes.GetAsync(uri);
+
+                while (!response.IsCompleted)
+                {
+                    //WAITING FOR API QUERY TO BE FINISHED
+                }
+
             }
 
         }
@@ -29,9 +36,14 @@ namespace BLL
                 //id = idRoomReservation
         {
             string uri = baseUri + "RoomReservations/DeleteRoomReservation/" + id;
-            using (HttpClient httpClient = new HttpClient())
+            using (HttpClient httpClientRoomRes = new HttpClient())
             {
-                Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
+                Task<HttpResponseMessage> response = httpClientRoomRes.GetAsync(uri);
+                
+                while(!response.IsCompleted)
+                {
+                    //WAITING FOR API QUERY TO BE FINISHED
+                }
             }
         }
 
@@ -45,6 +57,10 @@ namespace BLL
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
+                while (!response.IsCompleted)
+                {
+                    //WAITING FOR API QUERY TO BE FINISHED
+                }
             }
         }
 
@@ -56,6 +72,10 @@ namespace BLL
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
+                while (!response.IsCompleted)
+                {
+                    //WAITING FOR API QUERY TO BE FINISHED
+                }
             }
         }
 

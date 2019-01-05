@@ -18,16 +18,25 @@ namespace BLL
         //Get Client for login purposes
         public static Client GetClient(string surname, string name, string password)
         {
-            string uri = baseUri + "GetClient/" + surname + "/" + name + "/" + password;
-            Client client = null;
-            using (HttpClient httpClient = new HttpClient())
+            Client client = new Client();
+            try
             {
+                string uri = baseUri + "GetClient/" + surname + "/" + name + "/" + password;
+                client = null;
+                using (HttpClient httpClient = new HttpClient())
+                {
 
-                Task<String> response = httpClient.GetStringAsync(uri);
-                client = JsonConvert.DeserializeObject<Client>(response.Result);
+                    Task<String> response = httpClient.GetStringAsync(uri);
+                    client = JsonConvert.DeserializeObject<Client>(response.Result);
+                }
+            }
+            catch
+            {
+                return null;
             }
 
             return client;
+            
         }
     }
 }
