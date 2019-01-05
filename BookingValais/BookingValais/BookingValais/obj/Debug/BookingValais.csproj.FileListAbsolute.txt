@@ -196,7 +196,6 @@ C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\Bookin
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.dll
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\System.Web.WebPages.Razor.dll
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\WebGrease.dll
-C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\DAL.dll
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\BLL.pdb
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\DTO.pdb
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\EntityFramework.xml
@@ -217,7 +216,6 @@ C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\Bookin
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\Microsoft.AI.Web.xml
-C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\DAL.pdb
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Helpers.resources.dll
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Mvc.resources.dll
 C:\Users\Nicolas Solioz\eclipse\BookingValais\BookingValais\BookingValais\BookingValais\bin\fr\System.Web.Optimization.resources.dll

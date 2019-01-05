@@ -101,11 +101,16 @@ namespace BookingValais.Controllers
         [HttpPost]
         public ActionResult Delete(string[] selectedReservation)
         {
+            int idReservation = 0;
+            int nbOfReservations = selectedReservation.Length;
 
-            for (int i = 0; i < selectedReservation.Length; i++)
+            for (int i = 0; i < nbOfReservations; i++)
             {
-                ReservationManager.DeleteRoomReservation(Convert.ToInt32(selectedReservation[i].ToString()));
-                ReservationManager.DeleteReservation(Convert.ToInt32(selectedReservation[i].ToString()));
+                idReservation = Convert.ToInt32(selectedReservation[i].ToString());
+
+                ReservationManager.DeleteRoomReservation(idReservation);
+
+                ReservationManager.DeleteReservation(idReservation);
             }
             return View("DeleteOk");
         }

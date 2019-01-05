@@ -1,4 +1,4 @@
-﻿@model DTO.Hotel
+﻿@model List<DTO.Hotel>
 
 @{
     ViewBag.Title = "Index";
@@ -9,89 +9,92 @@
 <div>
     <h4>Hotel</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IdHotel)
-        </dt>
+    @foreach (var item in Model)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => item.IdHotel)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IdHotel)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.IdHotel)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.Description)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.Description)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.Location)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.Location)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.Category)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.Category)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HasWifi)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.HasWifi)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HasWifi)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.HasWifi)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HasParking)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.HasParking)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HasParking)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.HasParking)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.Phone)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.Phone)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.Email)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Website)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => item.Website)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Website)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => item.Website)
+            </dd>
 
-    </dl>
-</div>
+        </dl>
+    }
+    </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")

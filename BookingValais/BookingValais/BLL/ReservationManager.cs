@@ -18,12 +18,9 @@ namespace BLL
             //id = idReservation
         {
             string uri = baseUri + "Reservations/DeleteReservation/" + id;
-            Reservation reservation = null;
             using (HttpClient httpClient = new HttpClient())
             {
-
-                Task<String> response = httpClient.GetStringAsync(uri);
-                reservation = JsonConvert.DeserializeObject<Reservation>(response.Result);
+                Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
             }
 
         }
@@ -32,12 +29,9 @@ namespace BLL
                 //id = idRoomReservation
         {
             string uri = baseUri + "RoomReservations/DeleteRoomReservation/" + id;
-            RoomReservation roomReservation = null;
             using (HttpClient httpClient = new HttpClient())
             {
-
-                Task<String> response = httpClient.GetStringAsync(uri);
-                roomReservation = JsonConvert.DeserializeObject<RoomReservation>(response.Result);
+                Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
             }
         }
 
@@ -48,33 +42,27 @@ namespace BLL
             string totalPricText = Convert.ToString(totalPrice);
 
             string uri = baseUri + "Reservations/AddNewReservation/" + idClient + "/" + dateStartText + "/" + dateEndText + "/" + totalPricText;
-            Reservation reservation = new Reservation();
             using (HttpClient httpClient = new HttpClient())
             {
-
-                Task<String> response = httpClient.GetStringAsync(uri);
-                reservation = JsonConvert.DeserializeObject<Reservation>(response.Result);
+                Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
             }
-
-            ReservationDb.AddNewReservation(idClient, dateStart, dateEnd, totalPrice);
         }
 
         public static void AddNewRoomReservation(int idRoom, int idReservation)
         {
             string uri = baseUri + "RoomReservations/AddNewRoomReservation/" + idRoom + "/" + idReservation;
-            RoomReservation roomReservation = null;
+            RoomReservation roomReservation = new RoomReservation();
+
             using (HttpClient httpClient = new HttpClient())
             {
-
-                Task<String> response = httpClient.GetStringAsync(uri);
-                roomReservation = JsonConvert.DeserializeObject<RoomReservation>(response.Result);
+                Task<HttpResponseMessage> response = httpClient.GetAsync(uri);
             }
         }
 
         public static List<Reservation> GetAllReservations(int id)
         {
             //id = idClient
-            List<Reservation> results = null;
+            List<Reservation> results = new List<Reservation>();
             string uri = baseUri + "Reservations/GetAllReservations/" + id;
 
             using (HttpClient httpClient = new HttpClient())
