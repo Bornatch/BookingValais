@@ -55,10 +55,6 @@ namespace BLL
             //show only one picture when presented with the list of hotels (after search)
 
             String pictureUrl;
-<<<<<<< HEAD
-            String uri = baseUri + "GetPicture/" + id;
-=======
->>>>>>> fe9d13295a104f6484a287d172c8e26fb3a55c73
 
             String uri = baseUri + "GetPicture/" + id;
 

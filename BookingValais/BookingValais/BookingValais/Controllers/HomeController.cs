@@ -103,19 +103,14 @@ namespace BookingValais.Controllers
                 else
                 {
                     //get pictures
-                    Console.WriteLine("List Hotel enter");
                     List<string> pictureUrl = new List<string>();
                     foreach(DTO.Hotel hotel in listHotel)
                     {
                         pictureUrl.AddRange(PictureManager.GetPicturesHotel(hotel.IdHotel));
                     }
-                    Console.WriteLine("List hotel init");
+ 
                     ViewData["Pictures"] = pictureUrl;
-<<<<<<< HEAD
-                    Console.WriteLine("View data pass");
-=======
-                    
->>>>>>> fe9d13295a104f6484a287d172c8e26fb3a55c73
+
                     return View("Hotel");
                 }
             }

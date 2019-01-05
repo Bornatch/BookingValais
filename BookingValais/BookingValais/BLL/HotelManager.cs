@@ -6,7 +6,6 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using DAL;
 using DTO;
 namespace BLL
 {
@@ -42,7 +41,7 @@ namespace BLL
 
         }
 
-            public static List<Hotel> GetAvailableHotels(string dateStart, string dateEnd, string location, int persons)
+        public static List<Hotel> GetAvailableHotels(string dateStart, string dateEnd, string location, int persons)
         {
             //based on paramaters, this method will return a list of all possible rooms
             List<Hotel> results = new List<Hotel>();
@@ -60,29 +59,25 @@ namespace BLL
             //for (int i = 0; i < HotelDb.GetAvailableHotels(dateStart, dateEnd, location, persons).Count; i++)
 
             //results = GetHotels();
-        
+
             //return results;
         }
 
-    public static List<Hotel> GetAvailableHotelsAdvanced(string dateStart, string dateEnd, String location, int persons,
-                            string hasWifi, string hasParking, int category, string hasTV, string hasHairDryer)
-    {
-        //based on paramaters, this method will return a list of all possible rooms
-        List<Hotel> results = new List<Hotel>();
+        public static List<Hotel> GetAvailableHotelsAdvanced(string dateStart, string dateEnd, String location, int persons,
+            string hasWifi, string hasParking, int category, string hasTV, string hasHairDryer)
+        {
+            //based on paramaters, this method will return a list of all possible rooms
+            List<Hotel> results = new List<Hotel>();
 
-            String uri = baseUri + "Hotels/GetAvailableHotelsAdvanced/" + dateStart + "/" + dateEnd + "/" + location + "/" +  hasWifi + 
-                "/" + hasParking + "/" + category + "/" + persons + "/" + hasTV + "/" + hasHairDryer;
+            String uri = baseUri + "Hotels/GetAvailableHotelsAdvanced/" + dateStart + "/" + dateEnd + "/" + location + "/" + persons + "/" 
+                + hasWifi + "/" + hasParking + "/" + category + "/" + hasTV + "/" + hasHairDryer;
 
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
                 results = JsonConvert.DeserializeObject<List<Hotel>>(response.Result);
             }
-
             return results;
-
-            return results;
-     }
-        
+        }        
     }
 }
