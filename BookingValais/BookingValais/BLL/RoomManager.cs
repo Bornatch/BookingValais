@@ -17,24 +17,31 @@ namespace BLL
 
         static String baseUri = "http://localhost:3749/api/";
 
-        public static List<Room> GetAllRoomsByListId(List<int> idRooms)
+        public static List<Room> GetAllRoomsByListId(List<int> idRoomsList)
         {
-            
-            List<Room> results = new List<Room>();
-            String uri = baseUri + "Rooms/";
-            using (HttpClient httpClient = new HttpClient())
-            {
-                Task<String> response = httpClient.GetStringAsync(uri);
-                results = JsonConvert.DeserializeObject<List<Room>>(response.Result);
-            }
 
+            String uri = "";
+
+            List<Room> results = new List<Room>();
+
+            foreach(int idRoom in idRoomsList)
+            {
+                uri = baseUri + "Rooms/GetRoomById/" + idRoom;
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    Task<String> response = httpClient.GetStringAsync(uri);
+                    results.Add(JsonConvert.DeserializeObject<Room>(response.Result));
+                }
+            }
+            
             return results;
         }
 
-        public static List<Room> GetRooms(int idHotel, DateTime dateStart, DateTime dateEnd)
+        public static List<Room> GetRooms(int idHotel, string dateStart, string dateEnd)
         {
             List<Room> results = new List<Room>();
-            String uri = baseUri + "Rooms/"+idHotel+"/Rooms";
+
+            String uri = baseUri + "Rooms/GetRooms/" + idHotel + "/" + dateStart + "/" + dateEnd;
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
@@ -42,6 +49,7 @@ namespace BLL
             }
 
             return results;
+
 
         }
     }

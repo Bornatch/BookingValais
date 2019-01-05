@@ -42,6 +42,8 @@ namespace BookingValais.Controllers
 
                 ViewData["dateStart"] = dateStart;
                 ViewData["dateEnd"] = dateEnd;
+
+                //RoomManager.GetAllRoomsByListId(idRoomsToBook)
                 ViewData["listRoomsToBook"] = BLL.RoomManager.GetAllRoomsByListId(idRoomsToBook);
                 ViewData["totalPrice"] = totalPrice;
 

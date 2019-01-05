@@ -32,44 +32,34 @@ namespace BLL
         public static List<string> GetPicturesHotel(int idHotel)
         {
             List<String> url = new List<string>();
-            List<Picture> results = new List<Picture>();
+            List<string> results = new List<string>();
 
             String uri = baseUri+ "GetPicturesHotel/"+idHotel;
 
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
-                results = JsonConvert.DeserializeObject<List<Picture>>(response.Result);
+                results = JsonConvert.DeserializeObject<List<string>>(response.Result);
             }
 
-            foreach(Picture p in results)
-            {
-                url.Add(p.Url);
-            }
-
-            return url;
+            return results;
         }
         
-        public static string GetPicturesURL(int id)
+        public static List<string> GetPicturesURL(int id)
         {
             //show only one picture when presented with the list of hotels (after search)
 
-            String pictureUrl;
+            List<string> pictures;
 
-            String uri = baseUri + "GetPicture/" + id;
+            String uri = baseUri + "GetPicturesHotel/" + id;
 
             using (HttpClient httpClient = new HttpClient())
             {
                 Task<String> response = httpClient.GetStringAsync(uri);
-                pictureUrl = response.Result;
-                Console.WriteLine(pictureUrl);
-
-                //parse url to get the correct format
-                pictureUrl = pictureUrl.Substring(0, pictureUrl.Length - 2);
-                pictureUrl = pictureUrl.Substring(pictureUrl.IndexOf("http"));
+                pictures = JsonConvert.DeserializeObject<List<string>>(response.Result);
             }
 
-            return pictureUrl;
+            return pictures;
 
         }
     }
